@@ -117,8 +117,6 @@ write_modified_FCS <- function(fcs_exprs, fcs_name, channel_descriptions = NULL,
                                reference_description = NULL, old_description = NULL) {
   if (requireNamespace('flowCore', quietly = TRUE)) {
     if (is.matrix(fcs_exprs)) {
-      # Don't write 'Leading_Push' to FCS files    
-      fcs_exprs <- fcs_exprs[, which(colnames(fcs_exprs) != 'Leading_Push')]
       
       # Build metadata for FCS file
       pd <- c()  # 'params' phenoData
