@@ -291,7 +291,7 @@ for (population in 1:length(pop_names)) {
       return(sqrt(mahalanobis(y, get(paste0('Pop', population, '_means')), get(paste0('Pop', population, '_cov')), inverted = TRUE))) })))))
   }
   
-  cat('Done reading and processing', pop_names[population], 'cells.\n')
+  cat(paste0('Done reading and processing the file "', list.files(pops_dir, pattern = '.fcs')[population], '". Data will be used to represent the population you have called "', pop_names[population], ' cells".\n'))
 }
 
 # Checking validity of threshold before moving on
